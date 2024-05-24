@@ -2,7 +2,16 @@ name: Events Demo 1
 on:
   pull_request:
     types: [opened]
+    branches:
+      - main
+      - "dev-*" # dev-new dev-this-is-new * - bez slashy
+      - "feat/**" # feat/new feat/new/button ** - z slashami
   workflow_dispatch:
+  push:
+    branches:
+      - main
+      - "dev-*" # dev-new dev-this-is-new * - bez slashy
+      - "feat/**" # feat/new feat/new/button ** - z slashami
 jobs:
   deploy:
     runs-on: ubuntu-latest
